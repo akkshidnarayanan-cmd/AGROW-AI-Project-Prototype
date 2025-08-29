@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Agrow - Smart Farming</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee') no-repeat center center fixed;
+      background-size: cover;
+      color: #333;
+    }
+
+    header {
+      background: rgba(46,125,50,0.9);
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    nav {
+      background: rgba(27,94,32,0.95);
+      padding: 10px;
+      text-align: center;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    section {
+      padding: 30px;
+      background: rgba(255,255,255,0.9);
+      margin: 20px;
+      border-radius: 10px;
+    }
+
+    h2 {
+      color: #2e7d32;
+      text-align: center;
+    }
+
+    .cards {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+
+    .card {
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      width: 250px;
+      padding: 15px;
+      text-align: center;
+      transition: transform 0.2s;
+    }
+
+    .card:hover {
+      transform: scale(1.05);
+    }
+
+    .card button {
+      background: #2e7d32;
+      color: white;
+      padding: 8px 15px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    .card button:hover {
+      background: #1b5e20;
+    }
+
+    footer {
+      background: rgba(27,94,32,0.95);
+      color: white;
+      text-align: center;
+      padding: 15px;
+      margin-top: 20px;
+    }
+
+    /* Chatbot styles */
+    #chatbot {
+      background: #fff;
+      border: 2px solid #2e7d32;
+      border-radius: 10px;
+      padding: 15px;
+      margin: 30px auto;
+      width: 90%;
+      max-width: 600px;
+    }
+
+    #chatbox {
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      height: 250px;
+      overflow-y: auto;
+      padding: 10px;
+      margin-bottom: 10px;
+      background: #fdfdfd;
+    }
+
+    #userInput {
+      width: 75%;
+      padding: 8px;
+    }
+
+    #sendBtn {
+      padding: 9px 15px;
+      background: #2e7d32;
+      border: none;
+      color: white;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    #sendBtn:hover {
+      background: #1b5e20;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>🌱 Agrow - Smart Farming for Future</h1>
+    <p>Helping farmers with technology and guidance</p>
+  </header>
+
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#crops">Crops</a>
+    <a href="#market">Market</a>
+    <a href="#weather">Weather</a>
+    <a href="#services">Services</a>
+    <a href="#chatbot">Agrow Assistant</a>
+  </nav>
+
+  <!-- Home Section -->
+  <section id="home">
+    <h2>Welcome to Agrow</h2>
+    <p>Agrow is your smart farming assistant. Get crop guidance, market prices, and weather updates all in one place.</p>
+  </section>
+
+  <!-- Crop Section -->
+  <section id="crops">
+    <h2>Crop Suggestions</h2>
+    <div class="cards">
+      <div class="card">
+        <h3>🌾 Wheat</h3>
+        <p>Best season: Winter</p>
+        <p>Requires moderate water supply.</p>
+      </div>
+      <div class="card">
+        <h3>🌱 Rice</h3>
+        <p>Best season: Monsoon</p>
+        <p>Needs plenty of water.</p>
+      </div>
+      <div class="card">
+        <h3>🌽 Maize</h3>
+        <p>Best season: Summer</p>
+        <p>Grows well in well-drained soil.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Market Section -->
+  <section id="market">
+    <h2>Market Prices</h2>
+    <ul>
+      <li>Wheat: ₹2200 per quintal</li>
+      <li>Rice: ₹1800 per quintal</li>
+      <li>Maize: ₹1500 per quintal</li>
+    </ul>
+  </section>
+
+  <!-- Weather Section -->
+  <section id="weather">
+    <h2>Weather Update</h2>
+    <p>Today: Sunny 🌞, 32°C</p>
+    <p>Tomorrow: Mild rain 🌧, 28°C</p>
+  </section>
+
+  <!-- Services Section -->
+  <section id="services">
+    <h2>🌿 Our Services</h2>
+    <div class="cards">
+      <div class="card">
+        <h3>🌾 Crop Guidance</h3>
+        <p>Get the best advice on crop management.</p>
+        <button onclick="showService('crop')">Learn More</button>
+      </div>
+      <div class="card">
+        <h3>☀️ Weather Updates</h3>
+        <p>Stay updated with latest weather forecasts.</p>
+        <button onclick="showService('weather')">Learn More</button>
+      </div>
+      <div class="card">
+        <h3>🛠 Farming Tools</h3>
+        <p>Access modern tools and farming methods.</p>
+        <button onclick="showService('tools')">Learn More</button>
+      </div>
+      <div class="card">
+        <h3>📊 Market Insights</h3>
+        <p>Know real-time crop prices and demand.</p>
+        <button onclick="showService('market')">Learn More</button>
+      </div>
+    </div>
+
+    <!-- Service details -->
+    <div id="serviceDetails" style="margin-top:20px; padding:20px; border:2px solid #2e7d32; border-radius:10px; display:none; background:#f9fff9;">
+      <h3 id="serviceTitle"></h3>
+      <p id="serviceContent"></p>
+      <button onclick="closeService()" style="background:#1b5e20; color:white; padding:8px 15px; border:none; border-radius:5px; cursor:pointer;">Close</button>
+    </div>
+  </section>
+
+  <!-- Chatbot Section -->
+  <section id="chatbot">
+    <h2>Agrow Assistant 🤖</h2>
+    <div id="chatbox"></div>
+    <input type="text" id="userInput" placeholder="Ask me something...">
+    <button id="sendBtn" onclick="sendMessage()">Send</button>
+  </section>
+
+  <footer>
+    <p>© 2025 Agrow Farmers | Smart Farming Solutions</p>
+  </footer>
+
+  <script>
+    // Service details
+    function showService(service) {
+      let title = "";
+      let content = "";
+
+      if(service === "crop") {
+        title = "🌾 Crop Guidance";
+        content = "We provide expert recommendations on crop rotation, pest control, soil health, irrigation methods, and best practices for increasing yield.";
+      }
+      else if(service === "weather") {
+        title = "☀️ Weather Updates";
+        content = "Stay informed with real-time weather alerts, rainfall predictions, and temperature forecasts to plan your farming schedule better.";
+      }
+      else if(service === "tools") {
+        title = "🛠 Farming Tools";
+        content = "Discover modern tools, techniques, and smart farming equipment that improve productivity and reduce manual labor.";
+      }
+      else if(service === "market") {
+        title = "📊 Market Insights";
+        content = "Get access to current mandi prices, demand trends, and profitable crop suggestions for your region.";
+      }
+
+      document.getElementById("serviceTitle").innerText = title;
+      document.getElementById("serviceContent").innerText = content;
+      document.getElementById("serviceDetails").style.display = "block";
+    }
+
+    function closeService() {
+      document.getElementById("serviceDetails").style.display = "none";
+    }
+
+    // Chatbot
+    function sendMessage() {
+      let input = document.getElementById("userInput").value;
+      let chatbox = document.getElementById("chatbox");
+
+      if (input.trim() === "") return;
+
+      // Show user message
+      chatbox.innerHTML += "<p><b>You:</b> " + input + "</p>";
+
+      // Fake AI responses
+      let response = "Sorry, I don’t understand that yet.";
+      if (input.toLowerCase().includes("crop")) response = "You can grow wheat 🌾 in winter, rice 🌱 in monsoon, and maize 🌽 in summer.";
+      if (input.toLowerCase().includes("weather")) response = "Today's weather is Sunny 🌞, 32°C. Tomorrow: Mild rain 🌧, 28°C.";
+      if (input.toLowerCase().includes("market")) response = "Market Prices → Wheat: ₹2200, Rice: ₹1800, Maize: ₹1500 per quintal.";
+      if (input.toLowerCase().includes("hello")) response = "Hello farmer 👋! How can I help you today?";
+
+      // Show bot response
+      chatbox.innerHTML += "<p><b>AgrowBot:</b> " + response + "</p>";
+
+      // Clear input
+      document.getElementById("userInput").value = "";
+      chatbox.scrollTop = chatbox.scrollHeight;
+    }
+  </script>
+</body>
+</html>
